@@ -10,15 +10,9 @@ using System.Windows.Forms;
 
 namespace AppQuanLyTro
 {
-<<<<<<<< HEAD:AppQuanLyTro/FormLogin.cs
-    public partial class FormLogin : Form
-    {
-        public FormLogin()
-========
     public partial class FormAdmin : Form
     {
         public FormAdmin()
->>>>>>>> main:AppQuanLyTro/FormAdmin.cs
         {
             InitializeComponent();
         }
