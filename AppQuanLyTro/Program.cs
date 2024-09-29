@@ -16,7 +16,7 @@ namespace AppQuanLyTro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FromUser());
+            Application.Run(new FormLogin());
         }
     }
 }

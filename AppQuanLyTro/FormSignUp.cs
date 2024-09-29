@@ -31,5 +31,15 @@ namespace AppQuanLyTro
         {
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormSignUp_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

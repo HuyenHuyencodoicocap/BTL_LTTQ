@@ -69,5 +69,15 @@ namespace AppQuanLyTro.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2024_09_26_2315181 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2024-09-26 2315181", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
