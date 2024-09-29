@@ -53,6 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database Operations\CustomerAccountBase.cs" />
+    <Compile Include="Database\Connection.cs" />
+    <Compile Include="FormCustomerAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomerAccount.Designer.cs">
+      <DependentUpon>FormCustomerAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,8 +79,13 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\KhachThue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCustomerAccount.resx">
+      <DependentUpon>FormCustomerAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
