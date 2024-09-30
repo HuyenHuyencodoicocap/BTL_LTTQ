@@ -80,7 +80,14 @@
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
-    <Compile Include="Model\KhachThue.cs" />
+    <Compile Include="Model\Bill.cs" />
+    <Compile Include="Model\BillDetails.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Notification.cs" />
+    <Compile Include="Model\RentedHouse.cs" />
+    <Compile Include="Model\RoomService.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\RoomEquipment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCustomerAccount.resx">

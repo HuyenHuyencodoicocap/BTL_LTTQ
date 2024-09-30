@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppQuanLyTro.Model
 {
-    internal class KhachThue
+    internal class Customer
     {
        private string MaKhachThue;
        private string TenKhachThue;
@@ -15,8 +15,9 @@ namespace AppQuanLyTro.Model
        private string GioiTinh;
        private string QueQuan;
        private string TrangThaiThue;
+       private string MaPhong;
 
-        public KhachThue()
+        public Customer()
         {
         }
 
@@ -27,6 +28,9 @@ namespace AppQuanLyTro.Model
         public string NganySinh1 { get => NganySinh; set => NganySinh = value; }
         public string GioiTinh1 { get => GioiTinh; set => GioiTinh = value; }
         public string QueQuan1 { get => QueQuan; set => QueQuan = value; }
-        //public string TrangThaiThue1 { get => TrangThaiThue; set => TrangThaiThue = value; }
+        public string TrangThaiThue1 { get => TrangThaiThue; set => TrangThaiThue = value; }
+        public string MaPhong1 { get => MaPhong; set => MaPhong = value; }
+
+
     }
 }
