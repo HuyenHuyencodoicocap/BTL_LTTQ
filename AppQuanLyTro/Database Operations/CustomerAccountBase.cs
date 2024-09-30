@@ -20,10 +20,10 @@ namespace AppQuanLyTro.Database_Operations
         public CustomerAccountBase()
         {
         }
-        public DataTable getAllAccount()
+        public DataTable getAllCustomer()
         {
             DataTable dataTable = new DataTable();
-            String query = "Select  TenKhachThue,SoDienThoai,QueQuan,TrangThaiThuePhong,TaiKhoan.TenTaiKhoan,MatKhau from KhachThue join TaiKhoan on TaiKhoan.TenTaiKhoan = KhachThue.tenTaiKhoan";
+            String query = "Select  TenKhachThue,TaiKhoan.TenTaiKhoan,MatKhau,isAdmin,SoDienThoai,QueQuan,TrangThaiThuePhong from KhachThue right join TaiKhoan on TaiKhoan.TenTaiKhoan = KhachThue.tenTaiKhoan";
             using (SqlConnection sqlConnection = Connection.GetConnection())
             {
                 sqlConnection.Open();
@@ -34,24 +34,89 @@ namespace AppQuanLyTro.Database_Operations
             }
             return dataTable;
         }
+        public List<Account> ListAccount()
+        {
+            List<Account> danhSachTaiKhoan = new List<Account>(); 
+            String query = "SELECT * FROM TaiKhoan";
 
-        //public Account insertAccount(Account account) {
-        //    SqlConnection sqlConnection = Connection.GetConnection();
-        //    String query = "insert into TaiKhoan values (@tentaiKhoan,@matKhau,@isAdmin)";
-            
-        //    sqlConnection.Open();
-        //    cmd = new SqlCommand(query, sqlConnection);
-        //    cmd.Parameters.Add("@tentaiKhoan", SqlDbType.NVarChar).Value = account.TenTaiKhoan1;
-        //    cmd.Parameters.Add("@matKhau", SqlDbType.NVarChar).Value = account.MatKhau1;
-        //    cmd.Parameters.Add("@tentaiKhoan", SqlDbType.Bit).Value = account.IsAdmin;
-        //    cmd.ExecuteNonQuery(); 
-        //    finally { sqlConnection.Close(); }
+            using (SqlConnection sqlConnection = Connection.GetConnection())
+            {
+                sqlConnection.Open();
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            String tenTaiKhoan = reader[0].ToString();
+                            String matKhau = reader[2].ToString();
+                            bool quyenHan = Convert.ToBoolean(reader[1]);
+                            Account account = new Account(tenTaiKhoan, matKhau, quyenHan);
+                            danhSachTaiKhoan.Add(account);
+                        }
+                    }
+                }
+
+                sqlConnection.Close();
+            }
+
+            return danhSachTaiKhoan;
+        }
 
 
-        //    return account;
+        public Account insertAccount(Account account)
+        {
+            SqlConnection sqlConnection = Connection.GetConnection();
+            String query = "insert into TaiKhoan values (@tentaiKhoan,@isAdmin,@matKhau)";
 
-        //}
-    
+            sqlConnection.Open();
+            cmd = new SqlCommand(query, sqlConnection);
+            cmd.Parameters.Add("@tentaiKhoan", SqlDbType.NVarChar).Value = account.TenTaiKhoan1;
+            cmd.Parameters.Add("@matKhau", SqlDbType.NVarChar).Value = account.MatKhau1;
+            cmd.Parameters.Add("@isAdmin", SqlDbType.Bit).Value = account.IsAdmin;
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+            //finally { sqlConnection.Close(); }
+
+
+            return account;
+
+        }
+        public Account updateAccount(Account account,String oldtentaikhoan)
+        {
+            SqlConnection sqlConnection = Connection.GetConnection();
+            String query = "update TaiKhoan set tentaikhoan=@tentaikhoan, isAdmin= @isAdmin, matkhau=@matKhau  where tentaikhoan= @oldtentaiKhoan";
+
+            sqlConnection.Open();
+            cmd = new SqlCommand(query, sqlConnection);
+            cmd.Parameters.Add("@oldtentaiKhoan", SqlDbType.NVarChar).Value = oldtentaikhoan;
+            cmd.Parameters.Add("@tentaikhoan", SqlDbType.NVarChar).Value = account.TenTaiKhoan1;
+            cmd.Parameters.Add("@matKhau", SqlDbType.NVarChar).Value = account.MatKhau1;
+            cmd.Parameters.Add("@isAdmin", SqlDbType.Bit).Value = account.IsAdmin;
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+            //finally { sqlConnection.Close(); }
+
+
+            return account;
+
+        }
+        public void deleteAccount(String tenTaiKhoan)
+        {
+            SqlConnection sqlConnection = Connection.GetConnection();
+            String query = "DELETE FROM TaiKhoan WHERE tentaikhoan=@tentk";
+
+            sqlConnection.Open();
+            cmd = new SqlCommand(query, sqlConnection);
+            cmd.Parameters.Add("@tentk", SqlDbType.NVarChar).Value =tenTaiKhoan ;
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+            //finally { sqlConnection.Close(); }
+
+
+
+        }
+
 
     }
 }
