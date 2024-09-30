@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppQuanLyTro
 {
-    public partial class FormLogin : Form
+    public partial class Form1 : Form
     {
-        public FormLogin()
+        public Form1()
         {
             InitializeComponent();
         }
