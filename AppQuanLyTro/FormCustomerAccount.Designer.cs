@@ -148,7 +148,7 @@
             this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnThem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(853, 19);
+            this.btnThem.Location = new System.Drawing.Point(871, 20);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(184, 45);
             this.btnThem.TabIndex = 3;
@@ -166,7 +166,7 @@
             this.btnXoa.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnXoa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(853, 184);
+            this.btnXoa.Location = new System.Drawing.Point(871, 185);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(184, 45);
             this.btnXoa.TabIndex = 3;
@@ -184,7 +184,7 @@
             this.btnSua.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(853, 106);
+            this.btnSua.Location = new System.Drawing.Point(871, 107);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(184, 45);
             this.btnSua.TabIndex = 3;
@@ -194,16 +194,19 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.DataGridView1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.groupBox1.Location = new System.Drawing.Point(16, 248);
+            this.groupBox1.Location = new System.Drawing.Point(0, 250);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1075, 325);
+            this.groupBox1.Size = new System.Drawing.Size(1078, 325);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin khách hàng";
+            this.groupBox1.Text = "Thông tin tài khoản";
             // 
             // DataGridView1
             // 
+            this.DataGridView1.AllowUserToAddRows = false;
+            this.DataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -232,7 +235,7 @@
             this.DataGridView1.RowHeadersVisible = false;
             this.DataGridView1.RowHeadersWidth = 62;
             this.DataGridView1.RowTemplate.Height = 28;
-            this.DataGridView1.Size = new System.Drawing.Size(1069, 281);
+            this.DataGridView1.Size = new System.Drawing.Size(1072, 281);
             this.DataGridView1.TabIndex = 0;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -256,13 +259,14 @@
             this.DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
+            this.DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // FormCustomerAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1080, 575);
+            this.ClientSize = new System.Drawing.Size(1078, 575);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
