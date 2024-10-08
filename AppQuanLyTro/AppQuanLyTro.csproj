@@ -54,7 +54,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database Operations\CustomerAccountBase.cs" />
+    <Compile Include="Database Operations\CustomerInformationBase.cs" />
     <Compile Include="Database\Connection.cs" />
+    <Compile Include="FormCustomerInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomerInformation.Designer.cs">
+      <DependentUpon>FormCustomerInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCustomerAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +97,9 @@
     <Compile Include="Model\RoomEquipment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCustomerInformation.resx">
+      <DependentUpon>FormCustomerInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCustomerAccount.resx">
       <DependentUpon>FormCustomerAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +130,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\AppQuanLyTro.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -139,6 +150,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot 2024-09-26 2315181.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AppQuanLyTro.exe" />
+    <Content Include="bin\Debug\AppQuanLyTro.pdb" />
+    <Content Include="bin\Debug\Guna.UI2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

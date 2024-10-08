@@ -28,7 +28,10 @@ namespace AppQuanLyTro
         {
 
             account = new CustomerAccountBase();
-            DataGridView1.DataSource = account.getAllCustomer();
+            DataGridView1.DataSource = account.getAllAccount();
+            txtTenTaiKhoan.Text = "";
+            txtMatKhau.Text = "";
+            cmbQuyenHan.SelectedItem = "";
         }
 
        
@@ -105,9 +108,11 @@ namespace AppQuanLyTro
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            String tenTaiKhoan = DataGridView1.SelectedRows[0].Cells["tentaikhoan"].Value.ToString();
+            String tenTaiKhoan = DataGridView1.SelectedRows[0].Cells["tenTaiKhoan"].Value.ToString();
             account.deleteAccount(tenTaiKhoan);
             refreshGridView();
+            DialogResult result = MessageBox.Show("Xóa tài khoản thành công.", "Thông báo");
+
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -115,6 +120,11 @@ namespace AppQuanLyTro
             txtTenTaiKhoan.Text = DataGridView1.SelectedRows[0].Cells["tentaikhoan"].Value.ToString();
             txtMatKhau.Text = DataGridView1.SelectedRows[0].Cells["matKhau"].Value.ToString();
             cmbQuyenHan.Text = DataGridView1.SelectedRows[0].Cells["isAdmin"].Value.ToString();
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

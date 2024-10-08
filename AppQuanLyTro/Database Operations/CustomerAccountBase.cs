@@ -23,7 +23,21 @@ namespace AppQuanLyTro.Database_Operations
         public DataTable getAllCustomer()
         {
             DataTable dataTable = new DataTable();
-            String query = "Select  TenKhachThue,TaiKhoan.TenTaiKhoan,MatKhau,isAdmin,SoDienThoai,QueQuan,TrangThaiThuePhong from KhachThue right join TaiKhoan on TaiKhoan.TenTaiKhoan = KhachThue.tenTaiKhoan";
+            String query = "Select  * from KhachThue";
+            using (SqlConnection sqlConnection = Connection.GetConnection())
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter(query, sqlConnection);
+                dataAdapter.Fill(dataTable);
+
+                sqlConnection.Close();
+            }
+            return dataTable;
+        }
+        public DataTable getAllAccount()
+        {
+            DataTable dataTable = new DataTable();
+            String query = "Select  * from TaiKhoan";
             using (SqlConnection sqlConnection = Connection.GetConnection())
             {
                 sqlConnection.Open();

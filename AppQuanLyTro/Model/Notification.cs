@@ -12,25 +12,25 @@ namespace AppQuanLyTro.Model
         private string tenThongBao;
         private DateTime thoiGian;
         private string noiDung;
-        private string tenTaiKhoan;
+        private string MaTaiKhoan;
 
         public Notification()
         {
         }
 
-        public Notification(string maThongBao, string tenThongBao, DateTime thoiGian, string noiDung, string tenTaiKhoan)
+        public Notification(string maThongBao, string tenThongBao, DateTime thoiGian, string noiDung, string MaTaiKhoan)
         {
             this.maThongBao = maThongBao;
             this.tenThongBao = tenThongBao;
             this.thoiGian = thoiGian;
             this.noiDung = noiDung;
-            this.tenTaiKhoan = tenTaiKhoan;
+            this.MaTaiKhoan = MaTaiKhoan;
         }
 
         public string MaThongBao { get => maThongBao; set => maThongBao = value; }
         public string TenThongBao { get => tenThongBao; set => tenThongBao = value; }
         public DateTime ThoiGian { get => thoiGian; set => thoiGian = value; }
         public string NoiDung { get => noiDung; set => noiDung = value; }
-        public string TenTaiKhoan1 { get => tenTaiKhoan; set => tenTaiKhoan = value; }
+        public string MaTaiKhoan1 { get => MaTaiKhoan; set => MaTaiKhoan = value; }
     }
 }
