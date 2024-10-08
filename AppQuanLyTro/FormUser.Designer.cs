@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUser));
             this.pnSideMenu = new System.Windows.Forms.Panel();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.pnCaiDat = new System.Windows.Forms.Panel();
             this.btnTroGiup = new System.Windows.Forms.Button();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
@@ -47,9 +46,12 @@
             this.pnLogo = new System.Windows.Forms.Panel();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnNav = new System.Windows.Forms.Panel();
             this.lblTenNguoiDung = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblSearch = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.pnSideMenu.SuspendLayout();
             this.pnCaiDat.SuspendLayout();
             this.pnChucNang.SuspendLayout();
@@ -57,7 +59,7 @@
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +67,6 @@
             // 
             this.pnSideMenu.AutoScroll = true;
             this.pnSideMenu.BackColor = System.Drawing.Color.GhostWhite;
-            this.pnSideMenu.Controls.Add(this.btnLogOut);
             this.pnSideMenu.Controls.Add(this.pnCaiDat);
             this.pnSideMenu.Controls.Add(this.btnCaiDat);
             this.pnSideMenu.Controls.Add(this.pnChucNang);
@@ -81,22 +82,6 @@
             this.pnSideMenu.Name = "pnSideMenu";
             this.pnSideMenu.Size = new System.Drawing.Size(318, 666);
             this.pnSideMenu.TabIndex = 0;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogOut.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
-            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 864);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Padding = new System.Windows.Forms.Padding(30, 0, 80, 0);
-            this.btnLogOut.Size = new System.Drawing.Size(297, 80);
-            this.btnLogOut.TabIndex = 9;
-            this.btnLogOut.Text = "Đăng Xuất";
-            this.btnLogOut.UseVisualStyleBackColor = true;
             // 
             // pnCaiDat
             // 
@@ -323,7 +308,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.btnLogOut);
+            this.panel2.Controls.Add(this.pnNav);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(318, 0);
@@ -333,16 +319,18 @@
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // panel3
+            // pnNav
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel3.Controls.Add(this.lblTenNguoiDung);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(830, 54);
-            this.panel3.TabIndex = 2;
+            this.pnNav.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pnNav.Controls.Add(this.lblSearch);
+            this.pnNav.Controls.Add(this.txtSearch);
+            this.pnNav.Controls.Add(this.lblTenNguoiDung);
+            this.pnNav.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnNav.Location = new System.Drawing.Point(0, 0);
+            this.pnNav.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.pnNav.Name = "pnNav";
+            this.pnNav.Size = new System.Drawing.Size(830, 54);
+            this.pnNav.TabIndex = 2;
             // 
             // lblTenNguoiDung
             // 
@@ -351,14 +339,15 @@
             this.lblTenNguoiDung.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTenNguoiDung.Image = ((System.Drawing.Image)(resources.GetObject("lblTenNguoiDung.Image")));
             this.lblTenNguoiDung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTenNguoiDung.Location = new System.Drawing.Point(631, 0);
+            this.lblTenNguoiDung.Location = new System.Drawing.Point(656, 0);
             this.lblTenNguoiDung.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenNguoiDung.Name = "lblTenNguoiDung";
             this.lblTenNguoiDung.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.lblTenNguoiDung.Size = new System.Drawing.Size(199, 54);
+            this.lblTenNguoiDung.Size = new System.Drawing.Size(174, 54);
             this.lblTenNguoiDung.TabIndex = 0;
             this.lblTenNguoiDung.Text = "ABC";
             this.lblTenNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTenNguoiDung.Click += new System.EventHandler(this.lblTenNguoiDung_Click);
             // 
             // pictureBox1
             // 
@@ -371,6 +360,59 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderRadius = 4;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Location = new System.Drawing.Point(148, 13);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(446, 31);
+            this.txtSearch.TabIndex = 1;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = false;
+            this.lblSearch.BackColor = System.Drawing.Color.Transparent;
+            this.lblSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(23, 13);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(101, 31);
+            this.lblSearch.TabIndex = 2;
+            this.lblSearch.Text = "Tìm Kiếm ";
+            this.lblSearch.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogOut.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnLogOut.BorderRadius = 4;
+            this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOut.FillColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnLogOut.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.Black;
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.Location = new System.Drawing.Point(674, 51);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(156, 51);
+            this.btnLogOut.TabIndex = 3;
+            this.btnLogOut.Text = "Đăng Xuất";
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // FormUser
             // 
@@ -395,7 +437,7 @@
             this.pnLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.pnNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -406,7 +448,7 @@
         private System.Windows.Forms.Panel pnSideMenu;
         private System.Windows.Forms.Panel pnLogo;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnNav;
         private System.Windows.Forms.PictureBox pictureLogo;
         private System.Windows.Forms.Label lblTenNguoiDung;
         private System.Windows.Forms.Button btnCoSo;
@@ -423,6 +465,8 @@
         private System.Windows.Forms.Panel pnHomePage;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnHomePage;
-        private System.Windows.Forms.Button btnLogOut;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblSearch;
+        private Guna.UI2.WinForms.Guna2Button btnLogOut;
     }
 }

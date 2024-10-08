@@ -16,6 +16,7 @@ namespace AppQuanLyTro
         {
             InitializeComponent();
             hideMenu();
+          btnLogOut.Visible = false;
         }
         private void hideMenu()
         {
@@ -96,6 +97,23 @@ namespace AppQuanLyTro
         }
 
         private void FormUser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTenNguoiDung_Click(object sender, EventArgs e)
+        {
+            if (btnLogOut.Visible)
+            {
+                btnLogOut.Visible = false;
+            }
+            else
+            {
+                btnLogOut.Visible=true;
+            }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
 
         }
