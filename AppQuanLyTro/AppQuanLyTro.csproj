@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataProcess.cs" />
     <Compile Include="FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +66,30 @@
     <Compile Include="FromUser.Designer.cs">
       <DependentUpon>FromUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment\FormBill_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\FormBill_Admin.Designer.cs">
+      <DependentUpon>FormBill_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Formfill_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\Formfill_Admin.Designer.cs">
+      <DependentUpon>Formfill_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Form2_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\Form2_Admin.Designer.cs">
+      <DependentUpon>Form2_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Formchung_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\Formchung_Admin.Designer.cs">
+      <DependentUpon>Formchung_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormLogin.resx">
@@ -72,6 +97,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FromUser.resx">
       <DependentUpon>FromUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\FormBill_Admin.resx">
+      <DependentUpon>FormBill_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Formfill_Admin.resx">
+      <DependentUpon>Formfill_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Form2_Admin.resx">
+      <DependentUpon>Form2_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\Formchung_Admin.resx">
+      <DependentUpon>Formchung_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Payment\Image_ClientSend\" />
+    <Folder Include="Payment\Image_Payment\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

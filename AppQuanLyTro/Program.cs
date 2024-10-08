@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using AppQuanLyTro.Payment;
 namespace AppQuanLyTro
 {
     internal static class Program
@@ -16,7 +16,7 @@ namespace AppQuanLyTro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new Formfill_Admin());
         }
     }
 }
