@@ -41,92 +41,61 @@ namespace AppQuanLyTro
 
         }
 
-       
-
-
-        //private void btnThem_Click(object sender, EventArgs e)
-        //{
-        //    String tenTaiKhoan = txtTenKhachThue.Text;
-        //    String matKhau = txtSĐT.Text;
-        //    if (string.IsNullOrWhiteSpace(tenTaiKhoan))
-        //    {
-        //        MessageBox.Show("Tên tài khoản không được để trống.", "Lỗi");
-        //        return;
-        //    }
-
-        //    if (string.IsNullOrWhiteSpace(matKhau))
-        //    {
-        //        MessageBox.Show("Mật khẩu không được để trống.", "Lỗi");
-        //        return;
-        //    }
-
-        //    List<Account> danhSachTaiKhoan = account.ListAccount();
-        //    if (danhSachTaiKhoan.Any(acc => acc.TenTaiKhoan1 == tenTaiKhoan))
-        //    {
-        //        MessageBox.Show("Tên tài khoản đã tồn tại.", "Lỗi");
-        //        return;
-        //    }
-        //    //Account newAccount = new Account(tenTaiKhoan, matKhau, quyenHan);
-        //    account.insertAccount(newAccount);
-        //    refreshGridView();
-        //    danhSachTaiKhoan.Add(newAccount); // Giả sử bạn đang lưu danh sách tài khoản
-        //    DialogResult result = MessageBox.Show("Thêm tài khoản thành công.", "Thông báo");
-        //}
-
-        //private void btnSua_Click(object sender, EventArgs e)
-        //{
-        //    String tenTaiKhoan = txtTenKhachThue.Text;
-        //    String matKhau = txtSĐT.Text;
-        //    if (string.IsNullOrWhiteSpace(tenTaiKhoan))
-        //    {
-        //        MessageBox.Show("Tên tài khoản không được để trống.", "Lỗi");
-        //        return;
-        //    }
-
-        //    if (string.IsNullOrWhiteSpace(matKhau))
-        //    {
-        //        MessageBox.Show("Mật khẩu không được để trống.", "Lỗi");
-        //        return;
-        //    }
-
-        //    //if (cmbQuyenHan.SelectedItem == null)
-        //    //{
-        //    //    MessageBox.Show("Vui lòng chọn quyền hạn.", "Lỗi");
-        //    //    return;
-        //    //}
-
-        //    //bool quyenHan = Convert.ToBoolean(cmbQuyenHan.SelectedItem);
-        //    String oldtenTaiKhoan = ViewKhachHang.SelectedRows[0].Cells["tentaikhoan"].Value.ToString();
-
-        //    //Account newAccount = new Account(tenTaiKhoan, matKhau, quyenHan);
-        //    account.updateAccount(newAccount, oldtenTaiKhoan);
-        //    refreshGridView();
-        //    DialogResult result = MessageBox.Show("Sửa tài khoản thành công.", "Thông báo");
-
-        //}
-
-        //private void btnXoa_Click(object sender, EventArgs e)
-        //{
-        //    String tenTaiKhoan = ViewKhachHang.SelectedRows[0].Cells["tenTaiKhoan"].Value.ToString();
-        //    account.deleteAccount(tenTaiKhoan);
-        //    refreshGridView();
-        //    DialogResult result = MessageBox.Show("Xóa tài khoản thành công.", "Thông báo");
-
-        //}
-
-        //private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    txtTenKhachThue.Text = ViewKhachHang.SelectedRows[0].Cells["tentaikhoan"].Value.ToString();
-        //    txtSĐT.Text = ViewKhachHang.SelectedRows[0].Cells["matKhau"].Value.ToString();
-        //    //cmbQuyenHan.Text = DataGridView1.SelectedRows[0].Cells["isAdmin"].Value.ToString();
-
-        //}
-
-        
-
-        private void ViewKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ViewKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            txtTenKhachThue.Text = ViewKhachHang.SelectedRows[0].Cells["Tên Khách Thuê"].Value.ToString();
+            txtSĐT.Text = ViewKhachHang.SelectedRows[0].Cells["SĐT"].Value.ToString();
+            txtNgaySinh.Text = ViewKhachHang.SelectedRows[0].Cells["Ngày Sinh"].Value.ToString();
+            string gioiTinh = ViewKhachHang.SelectedRows[0].Cells["Giới tính"].Value.ToString();
+            if (gioiTinh == "Nam")
+            {
+                rbNam.Checked = true;
+            }
+            else if (gioiTinh == "Nữ")
+            {
+                rbNu.Checked = true;
+            }
+            txtQueQuan.Text = ViewKhachHang.SelectedRows[0].Cells["Quê quán"].Value.ToString();
+            txtSoPhong.Text= ViewKhachHang.SelectedRows[0].Cells["Số phòng"].Value.ToString();
+
+            String TrangThaiThue = ViewKhachHang.SelectedRows[0].Cells["Trạng thái thuê phòng"].Value.ToString();
+            if (TrangThaiThue == "true")
+            {
+                cmbTrangThaiThue.Text = "Đã thuê";
+            }
+            else if (TrangThaiThue == "false")
+            {
+                cmbTrangThaiThue.Text = "Dừng thuê";
+            }
+
+
+
+
+
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtTenKhachThue.Text)) {
+                MessageBox.Show("Tên khách thuê không được bỏ trống", "Thông báo", (MessageBoxButtons)MessageBoxIcon.Warning);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(txtSĐT.Text))
+            {
+                MessageBox.Show("SĐT không được bỏ trống", "Thông báo", (MessageBoxButtons)MessageBoxIcon.Warning);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(txtSoPhong.Text))
+            {
+                MessageBox.Show("Số phòng không được bỏ trống", "Thông báo", (MessageBoxButtons)MessageBoxIcon.Warning);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(cmbTrangThaiThue.Text))
+            {
+                MessageBox.Show("Trạng thái thuê không được bỏ trống", "Thông báo", (MessageBoxButtons)MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }
