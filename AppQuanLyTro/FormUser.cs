@@ -10,17 +10,20 @@ using System.Windows.Forms;
 
 namespace AppQuanLyTro
 {
-    public partial class FromUser : Form
+    public partial class FormUser : Form
     {
-        public FromUser()
+        public FormUser()
         {
             InitializeComponent();
             hideMenu();
+          btnLogOut.Visible = false;
         }
         private void hideMenu()
         {
+            pnHomePage.Visible = false;
             pnChucNang.Visible = false;
             pnCaiDat.Visible = false;
+
         }
         private void showMenu(Panel panel)
         {
@@ -60,7 +63,7 @@ namespace AppQuanLyTro
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
@@ -69,6 +72,48 @@ namespace AppQuanLyTro
         }
 
         private void btnTroGiup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            showMenu(pnHomePage);
+        }
+
+        private void btnCoSo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHomePage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormUser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTenNguoiDung_Click(object sender, EventArgs e)
+        {
+            if (btnLogOut.Visible)
+            {
+                btnLogOut.Visible = false;
+            }
+            else
+            {
+                btnLogOut.Visible=true;
+            }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
 
         }
