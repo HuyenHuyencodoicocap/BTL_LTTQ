@@ -4,3 +4,5 @@ tiện lợi và nhanh chóng trong thời đại công nghệ số cũng như s
 # Dự án gồm các thành viên
 - Lê thanh Huyền
 - Lê Thị Quỳnh Anh
+- Trần Văn Dũng
+- Nguyễn Thị Phương Anh
